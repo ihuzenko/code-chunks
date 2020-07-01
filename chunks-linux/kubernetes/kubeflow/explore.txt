@@ -1,0 +1,146 @@
+Getting things managed by kfctl
+
+kubectl get all -l app.kubernetes.io/managed-by=kfctl -A
+NAMESPACE         NAME                                                              READY   STATUS    RESTARTS   AGE
+cert-manager      pod/cert-manager-cainjector-c578b68fc-j56bz                       1/1     Running   0          18h
+cert-manager      pod/cert-manager-fcc6cd946-rd48p                                  1/1     Running   0          18h
+cert-manager      pod/cert-manager-webhook-657b94c676-rmr69                         1/1     Running   2          18h
+istio-system      pod/authservice-0                                                 1/1     Running   0          18h
+knative-serving   pod/activator-58595c998d-zq9ws                                    2/2     Running   1          18h
+knative-serving   pod/autoscaler-7ffb4cf7d7-fn89b                                   2/2     Running   3          18h
+knative-serving   pod/autoscaler-hpa-686b99f459-9fjsk                               1/1     Running   0          18h
+knative-serving   pod/controller-c6d7f946-clvzc                                     1/1     Running   0          18h
+knative-serving   pod/networking-istio-ff8674ddf-qh9vg                              1/1     Running   0          18h
+knative-serving   pod/webhook-6d99c5dbbf-lnq42                                      1/1     Running   0          18h
+kubeflow          pod/admission-webhook-deployment-684bf8f8c4-pss4h                 1/1     Running   0          18h
+kubeflow          pod/application-controller-stateful-set-0                         1/1     Running   0          18h
+kubeflow          pod/argo-ui-5f845464d7-klthv                                      1/1     Running   0          18h
+kubeflow          pod/centraldashboard-6b4d4bc7c-nwv9b                              1/1     Running   0          18h
+kubeflow          pod/jupyter-web-app-deployment-544b7d5684-9lvbp                   1/1     Running   0          18h
+kubeflow          pod/katib-controller-6b87947df8-b9qcj                             1/1     Running   1          18h
+kubeflow          pod/katib-db-manager-54b64f99b-rqwvh                              1/1     Running   1          18h
+kubeflow          pod/katib-mysql-74747879d7-cdmgr                                  1/1     Running   0          18h
+kubeflow          pod/katib-ui-76f84754b6-sn8zd                                     1/1     Running   0          18h
+kubeflow          pod/kfserving-controller-manager-0                                2/2     Running   1          18h
+kubeflow          pod/minio-5dc88dd55c-dhtpl                                        1/1     Running   0          18h
+kubeflow          pod/ml-pipeline-55b669bf4d-mwbqx                                  1/1     Running   0          18h
+kubeflow          pod/ml-pipeline-ml-pipeline-visualizationserver-c489f5dd8-kpplv   1/1     Running   0          18h
+kubeflow          pod/ml-pipeline-persistenceagent-f54b4dcf5-xqrq7                  1/1     Running   1          18h
+kubeflow          pod/ml-pipeline-scheduledworkflow-7f5d9d967b-q6ph7                1/1     Running   0          18h
+kubeflow          pod/ml-pipeline-ui-7bb97bf8d8-tg8ff                               1/1     Running   0          18h
+kubeflow          pod/ml-pipeline-viewer-controller-deployment-584cd7674b-8pr47     1/1     Running   0          18h
+kubeflow          pod/mysql-66c5c7bf56-rsgcw                                        1/1     Running   0          18h
+kubeflow          pod/notebook-controller-deployment-576589db9d-bdms5               1/1     Running   0          18h
+kubeflow          pod/profiles-deployment-5f7db45fb6-kvwfc                          2/2     Running   0          18h
+kubeflow          pod/pytorch-operator-666dd4cd49-svpkw                             1/1     Running   0          18h
+kubeflow          pod/seldon-controller-manager-5d96986d47-9cz6l                    1/1     Running   0          18h
+kubeflow          pod/spartakus-volunteer-7465bcbdc-78sw2                           1/1     Running   0          18h
+kubeflow          pod/tf-job-operator-7574b968b5-ptg7p                              1/1     Running   0          18h
+kubeflow          pod/workflow-controller-6db95548dd-8x77v                          1/1     Running   0          18h
+
+NAMESPACE         NAME                                                   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                     AGE
+cert-manager      service/cert-manager                                   ClusterIP   10.96.213.132   <none>        9402/TCP                    18h
+cert-manager      service/cert-manager-webhook                           ClusterIP   10.96.126.180   <none>        443/TCP                     18h
+istio-system      service/authservice                                    ClusterIP   10.96.183.167   <none>        8080/TCP                    18h
+knative-serving   service/activator-service                              ClusterIP   10.96.146.113   <none>        80/TCP,81/TCP,9090/TCP      18h
+knative-serving   service/autoscaler                                     ClusterIP   10.96.178.192   <none>        8080/TCP,9090/TCP,443/TCP   18h
+knative-serving   service/controller                                     ClusterIP   10.96.249.163   <none>        9090/TCP                    18h
+knative-serving   service/webhook                                        ClusterIP   10.96.156.108   <none>        443/TCP                     18h
+kubeflow          service/admission-webhook-service                      ClusterIP   10.96.173.217   <none>        443/TCP                     18h
+kubeflow          service/application-controller-service                 ClusterIP   10.96.165.185   <none>        443/TCP                     18h
+kubeflow          service/argo-ui                                        NodePort    10.96.82.180    <none>        80:30332/TCP                18h
+kubeflow          service/centraldashboard                               ClusterIP   10.96.175.8     <none>        80/TCP                      18h
+kubeflow          service/jupyter-web-app-service                        ClusterIP   10.96.160.200   <none>        80/TCP                      18h
+kubeflow          service/katib-controller                               ClusterIP   10.96.136.60    <none>        443/TCP,8080/TCP            18h
+kubeflow          service/katib-db-manager                               ClusterIP   10.96.170.73    <none>        6789/TCP                    18h
+kubeflow          service/katib-mysql                                    ClusterIP   10.96.228.22    <none>        3306/TCP                    18h
+kubeflow          service/katib-ui                                       ClusterIP   10.96.197.100   <none>        80/TCP                      18h
+kubeflow          service/kfserving-controller-manager-metrics-service   ClusterIP   10.96.102.21    <none>        8443/TCP                    18h
+kubeflow          service/kfserving-controller-manager-service           ClusterIP   10.96.97.76     <none>        443/TCP                     18h
+kubeflow          service/minio-service                                  ClusterIP   10.96.200.216   <none>        9000/TCP                    18h
+kubeflow          service/ml-pipeline                                    ClusterIP   10.96.108.2     <none>        8888/TCP,8887/TCP           18h
+kubeflow          service/ml-pipeline-ml-pipeline-visualizationserver    ClusterIP   10.96.173.211   <none>        8888/TCP                    18h
+kubeflow          service/ml-pipeline-tensorboard-ui                     ClusterIP   10.96.84.207    <none>        80/TCP                      18h
+kubeflow          service/ml-pipeline-ui                                 ClusterIP   10.96.101.163   <none>        80/TCP                      18h
+kubeflow          service/mysql                                          ClusterIP   10.96.13.114    <none>        3306/TCP                    18h
+kubeflow          service/notebook-controller-service                    ClusterIP   10.96.60.66     <none>        443/TCP                     18h
+kubeflow          service/profiles-kfam                                  ClusterIP   10.96.146.104   <none>        8081/TCP                    18h
+kubeflow          service/pytorch-operator                               ClusterIP   10.96.190.247   <none>        8443/TCP                    18h
+kubeflow          service/seldon-webhook-service                         ClusterIP   10.96.45.255    <none>        443/TCP                     18h
+kubeflow          service/tf-job-operator                                ClusterIP   10.96.176.64    <none>        8443/TCP                    18h
+
+NAMESPACE         NAME                                                          READY   UP-TO-DATE   AVAILABLE   AGE
+cert-manager      deployment.apps/cert-manager                                  1/1     1            1           18h
+cert-manager      deployment.apps/cert-manager-cainjector                       1/1     1            1           18h
+cert-manager      deployment.apps/cert-manager-webhook                          1/1     1            1           18h
+knative-serving   deployment.apps/activator                                     1/1     1            1           18h
+knative-serving   deployment.apps/autoscaler                                    1/1     1            1           18h
+knative-serving   deployment.apps/autoscaler-hpa                                1/1     1            1           18h
+knative-serving   deployment.apps/controller                                    1/1     1            1           18h
+knative-serving   deployment.apps/networking-istio                              1/1     1            1           18h
+knative-serving   deployment.apps/webhook                                       1/1     1            1           18h
+kubeflow          deployment.apps/admission-webhook-deployment                  1/1     1            1           18h
+kubeflow          deployment.apps/argo-ui                                       1/1     1            1           18h
+kubeflow          deployment.apps/centraldashboard                              1/1     1            1           18h
+kubeflow          deployment.apps/jupyter-web-app-deployment                    1/1     1            1           18h
+kubeflow          deployment.apps/katib-controller                              1/1     1            1           18h
+kubeflow          deployment.apps/katib-db-manager                              1/1     1            1           18h
+kubeflow          deployment.apps/katib-mysql                                   1/1     1            1           18h
+kubeflow          deployment.apps/katib-ui                                      1/1     1            1           18h
+kubeflow          deployment.apps/minio                                         1/1     1            1           18h
+kubeflow          deployment.apps/ml-pipeline                                   1/1     1            1           18h
+kubeflow          deployment.apps/ml-pipeline-ml-pipeline-visualizationserver   1/1     1            1           18h
+kubeflow          deployment.apps/ml-pipeline-persistenceagent                  1/1     1            1           18h
+kubeflow          deployment.apps/ml-pipeline-scheduledworkflow                 1/1     1            1           18h
+kubeflow          deployment.apps/ml-pipeline-ui                                1/1     1            1           18h
+kubeflow          deployment.apps/ml-pipeline-viewer-controller-deployment      1/1     1            1           18h
+kubeflow          deployment.apps/mysql                                         1/1     1            1           18h
+kubeflow          deployment.apps/notebook-controller-deployment                1/1     1            1           18h
+kubeflow          deployment.apps/profiles-deployment                           1/1     1            1           18h
+kubeflow          deployment.apps/pytorch-operator                              1/1     1            1           18h
+kubeflow          deployment.apps/seldon-controller-manager                     1/1     1            1           18h
+kubeflow          deployment.apps/spartakus-volunteer                           1/1     1            1           18h
+kubeflow          deployment.apps/tf-job-operator                               1/1     1            1           18h
+kubeflow          deployment.apps/workflow-controller                           1/1     1            1           18h
+
+NAMESPACE         NAME                                                                    DESIRED   CURRENT   READY   AGE
+cert-manager      replicaset.apps/cert-manager-cainjector-c578b68fc                       1         1         1       18h
+cert-manager      replicaset.apps/cert-manager-fcc6cd946                                  1         1         1       18h
+cert-manager      replicaset.apps/cert-manager-webhook-657b94c676                         1         1         1       18h
+knative-serving   replicaset.apps/activator-58595c998d                                    1         1         1       18h
+knative-serving   replicaset.apps/autoscaler-7ffb4cf7d7                                   1         1         1       18h
+knative-serving   replicaset.apps/autoscaler-hpa-686b99f459                               1         1         1       18h
+knative-serving   replicaset.apps/controller-c6d7f946                                     1         1         1       18h
+knative-serving   replicaset.apps/networking-istio-ff8674ddf                              1         1         1       18h
+knative-serving   replicaset.apps/webhook-6d99c5dbbf                                      1         1         1       18h
+kubeflow          replicaset.apps/admission-webhook-deployment-684bf8f8c4                 1         1         1       18h
+kubeflow          replicaset.apps/argo-ui-5f845464d7                                      1         1         1       18h
+kubeflow          replicaset.apps/centraldashboard-6b4d4bc7c                              1         1         1       18h
+kubeflow          replicaset.apps/jupyter-web-app-deployment-544b7d5684                   1         1         1       18h
+kubeflow          replicaset.apps/katib-controller-6b87947df8                             1         1         1       18h
+kubeflow          replicaset.apps/katib-db-manager-54b64f99b                              1         1         1       18h
+kubeflow          replicaset.apps/katib-mysql-74747879d7                                  1         1         1       18h
+kubeflow          replicaset.apps/katib-ui-76f84754b6                                     1         1         1       18h
+kubeflow          replicaset.apps/minio-5dc88dd55c                                        1         1         1       18h
+kubeflow          replicaset.apps/ml-pipeline-55b669bf4d                                  1         1         1       18h
+kubeflow          replicaset.apps/ml-pipeline-ml-pipeline-visualizationserver-c489f5dd8   1         1         1       18h
+kubeflow          replicaset.apps/ml-pipeline-persistenceagent-f54b4dcf5                  1         1         1       18h
+kubeflow          replicaset.apps/ml-pipeline-scheduledworkflow-7f5d9d967b                1         1         1       18h
+kubeflow          replicaset.apps/ml-pipeline-ui-7bb97bf8d8                               1         1         1       18h
+kubeflow          replicaset.apps/ml-pipeline-viewer-controller-deployment-584cd7674b     1         1         1       18h
+kubeflow          replicaset.apps/mysql-66c5c7bf56                                        1         1         1       18h
+kubeflow          replicaset.apps/notebook-controller-deployment-576589db9d               1         1         1       18h
+kubeflow          replicaset.apps/profiles-deployment-5f7db45fb6                          1         1         1       18h
+kubeflow          replicaset.apps/pytorch-operator-666dd4cd49                             1         1         1       18h
+kubeflow          replicaset.apps/seldon-controller-manager-5d96986d47                    1         1         1       18h
+kubeflow          replicaset.apps/spartakus-volunteer-7465bcbdc                           1         1         1       18h
+kubeflow          replicaset.apps/tf-job-operator-7574b968b5                              1         1         1       18h
+kubeflow          replicaset.apps/workflow-controller-6db95548dd                          1         1         1       18h
+
+NAMESPACE      NAME                                                   READY   AGE
+istio-system   statefulset.apps/authservice                           1/1     18h
+kubeflow       statefulset.apps/application-controller-stateful-set   1/1     18h
+kubeflow       statefulset.apps/kfserving-controller-manager          1/1     18h
+
+NAMESPACE         NAME                                            REFERENCE              TARGETS          MINPODS   MAXPODS   REPLICAS   AGE
+knative-serving   horizontalpodautoscaler.autoscaling/activator   Deployment/activator   <unknown>/100%   1         20        1          18h

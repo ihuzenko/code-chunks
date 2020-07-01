@@ -1,0 +1,11 @@
+Recommended labels allow to easier manage components and are
+grouped around concept of application. All of them have common
+prefix app.kubernetes.io.
+
+app.kubernetes.io/name        - Name of the application
+app.kubernetes.io/instance    - Unique name identifying instance on app
+app.kubernetes.io/version     - Current version of the app
+app.kubernetes.io/component   - Component within architecture
+app.kubernetes.io/part-of     - Name of higher level app which embraces current app
+app.kubernetes.io/managed-by  - The tool being used to manage the operation of an
+                                application

@@ -1,0 +1,15 @@
+<configuration>
+
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <pattern>%d{HH:mm:ss.SSS} %-4level [%t]: %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="chunks" level="debug" additivity="false">
+    <appender-ref ref="CONSOLE"/>
+  </logger>
+  <root level="warn">
+    <appender-ref ref="CONSOLE"/>
+  </root>
+</configuration>
