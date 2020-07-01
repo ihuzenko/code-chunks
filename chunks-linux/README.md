@@ -14,6 +14,10 @@ cd /var/lib/
 cd - 
 cd ..
 ```
+List non-hidden dirs only in the current location. 
+```shell script
+ls -d1 */
+```
 
 - cd 
 - ls
